@@ -3,10 +3,12 @@ package com.rt.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rt.entity.ISHPlan;
+import com.rt.domain.ISHPlan;
+import com.rt.entity.ISHPlanEntity;
 import com.rt.repository.ISHPlanRepository;
 
 @Service
@@ -17,25 +19,29 @@ public class ISHPlanServiceImpl implements ISHPlanService{
 
 	@Override
 	public String registerISHPlan(ISHPlan ishPlan) {
-		ISHPlan savedPlan = ishPlanRepository.save(ishPlan);
+		ISHPlanEntity ishPlan1 = new ISHPlanEntity();
+		
+		BeanUtils.copyProperties(ishPlan, ishPlan1);
+		
+		ISHPlanEntity savedPlan = ishPlanRepository.save(ishPlan1);
 		return savedPlan.getPlanId()+ "Registered successfully...!";
 	}
 
 	@Override
-	public ISHPlan showISHPlanById(long planId) {
+	public ISHPlanEntity showISHPlanById(long planId) {
 		
 		return null;
 	}
 
 	@Override
-	public String updateISHPlan(ISHPlan ishPlan) {
+	public String updateISHPlan(ISHPlanEntity ishPlan) {
 		
 		return null;
 	}
 
 	@Override
-	public List<ISHPlan> showAllPlan() {
-		List<ISHPlan> allPlans = ishPlanRepository.findAll();
+	public List<ISHPlanEntity> showAllPlan() {
+		List<ISHPlanEntity> allPlans = ishPlanRepository.findAll();
 		return allPlans;
 	}
 

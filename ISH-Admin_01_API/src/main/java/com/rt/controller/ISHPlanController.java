@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rt.entity.ISHPlan;
+import com.rt.domain.ISHPlan;
 import com.rt.service.ISHPlanServiceImpl;
 
 @RestController

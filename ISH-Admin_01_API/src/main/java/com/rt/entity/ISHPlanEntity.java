@@ -16,7 +16,7 @@ import lombok.Setter;
 @Table(name = "JRTP03_PLAN_MASTER")
 @Getter
 @Setter
-public class ISHPlan {
+public class ISHPlanEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long planId;

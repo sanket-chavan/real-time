@@ -3,7 +3,8 @@ package com.rt.service;
 import java.util.List;
 import java.util.Map;
 
-import com.rt.entity.ISHPlan;
+import com.rt.domain.ISHPlan;
+import com.rt.entity.ISHPlanEntity;
 
 public interface ISHPlanService {
 	
@@ -11,11 +12,11 @@ public interface ISHPlanService {
 	public String registerISHPlan(ISHPlan ishPlan);
 	
 	//for single selection
-	public ISHPlan showISHPlanById(long planId);
+	public ISHPlanEntity showISHPlanById(long planId);
 
-	public String updateISHPlan(ISHPlan ishPlan);
+	public String updateISHPlan(ISHPlanEntity ishPlan);
 	
-	public List<ISHPlan> showAllPlan();
+	public List<ISHPlanEntity> showAllPlan();
 	
 	public String deleteISHPlan(Long planId);
 	
